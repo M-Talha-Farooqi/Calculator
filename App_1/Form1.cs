@@ -17,6 +17,10 @@ namespace App_1
         double result;
         string operation = "";
         bool operationPending = false;
+
+        // For Scientific Operation
+        bool isScientificVisible = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -135,6 +139,7 @@ namespace App_1
 
         private void btn_mult_Click(object sender, EventArgs e)
         {
+
             if (operationPending)
             {
                 Evaluate();
@@ -254,5 +259,81 @@ namespace App_1
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void btn_toggle_Click(object sender, EventArgs e)
+        {
+            isScientificVisible = !isScientificVisible;
+            
+            panel1.Visible = isScientificVisible;
+
+            btn_toggle.Text = isScientificVisible ? "Hide Scientific Operations" : "Show Scientific Operations";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Sqrt_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Sqrt(number);
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_sin_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Sin(number * Math.PI / 180); // Convert degrees to radians
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_cos_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Cos(number * Math.PI / 180);
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_tan_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Tan(number * Math.PI / 180);
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Log10(number);
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_pi_Click(object sender, EventArgs e)
+        {
+            double result = Math.PI;
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
+        private void btn_ln_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(currentInput);
+            double result = Math.Log(number); // Natural log
+            textBox1.Text = result.ToString();
+            currentInput = result.ToString();
+        }
+
     }
+
 }
