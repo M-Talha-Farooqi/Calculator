@@ -2,7 +2,7 @@
 
 A fully functional scientific calculator built using **C#** and **Windows Forms (.NET Framework)**. This desktop app handles both basic arithmetic and essential scientific operations — with a clean, user-friendly interface.
 
-![Calculator UI](calculator_ui.png)
+![Calculator UI](calculator_ui.PNG)
 
 ---
 
